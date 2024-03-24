@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, Fragment} from 'react'
 
 export default function MiHeader() {
 
@@ -14,12 +14,12 @@ export default function MiHeader() {
   }
 
   return (
-    <div>
+    <Fragment>
         <input type="text" value={text} onChange={textOnChange}/>
         <button onClick={buttonOnClick}>Actualizar</button>
         <p>Peli vieja: {text}</p>
         <p>Peli Nueva: {updated}</p>
-    </div>
+    </Fragment>
     
   )
 }
