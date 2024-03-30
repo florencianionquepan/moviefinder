@@ -2,6 +2,6 @@ const name="Flower";
 
 export const MiFooter=()=>{
     return (
-            <p>{name}&Copy</p>
+            <p className="text-3xl font-bold underline">{name}&Copy</p>
     )
 }
