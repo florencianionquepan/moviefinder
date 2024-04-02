@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Ubuntu-Regular';
+    src: url(./../public/fonts/Ubuntu-Regular.ttf);
+}
+
 html, body{
     background-color: #21232A;
     color:antiquewhite;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Ubuntu-Regular', sans-serif;
 }
