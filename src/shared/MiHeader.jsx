@@ -12,7 +12,7 @@ export default function MiHeader() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='shadow-md w-full top-0 left-0'>
+    <div className='shadow-md w-full relative top-0 left-0'>
       <div className='md:flex justify-between items-center py-4 md:px-10 px-7'>
         
         {/* logo section */}
@@ -33,7 +33,7 @@ export default function MiHeader() {
         md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] 
         left-0 w-full md:w-auto md:pl-0 pl-9
         transition-all duration-500 ease-in 
-        ${isOpen?'top-12':'top-[-490px]'}`}>
+        ${isOpen?'top-12':'top-[-490px]'} z-50 bg-[#21232A]`}>
           {
             Links.map(link=>
             <li className='font-semibold my-7 md:my-0 md:ml-8'>
