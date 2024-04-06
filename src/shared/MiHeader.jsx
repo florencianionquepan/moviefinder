@@ -4,9 +4,9 @@ import { FilmIcon, Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/s
 
 export default function MiHeader() {
   let Links=[
-    {name:'Home', link:'/'},
-    {name:'Movies', link:'/movies'},
-    {name:'Genre', link:'/genres'}
+    {id:1, name:'Home', link:'/'},
+    {id:2, name:'Movies', link:'/movies'},
+    {id:3, name:'Genre', link:'/genres'}
   ]
 
   let [isOpen, setIsOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function MiHeader() {
         ${isOpen?'top-12':'top-[-490px]'} z-50 bg-[#21232A]`}>
           {
             Links.map(link=>
-            <li className='font-semibold my-7 md:my-0 md:ml-8'>
+            <li className='font-semibold my-7 md:my-0 md:ml-8' key={link.id}>
               <a href={link.link} className='hover:text-violet-400 duration-500'>
                 {link.name}
               </a>
