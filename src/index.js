@@ -3,20 +3,13 @@ import ReactDOM from 'react-dom/client'
 import MiHeader from './shared/MiHeader'
 import { MiFooter } from './shared/MiFooter'
 import './styles.css';
-import { CounterApp } from './tareas/CounterApp';
+import {MovieApp} from './MovieApp';
 
-
-const App=()=>{
-    return <div className='min-h-[500px] flex flex-col m-5'>
-        Movies App
-        </div>
-}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <MiHeader/>
-        <CounterApp value={10}/>
-        <App/>
+        <MovieApp/>
         <MiFooter/>
     </React.StrictMode>
 
