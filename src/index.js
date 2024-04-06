@@ -7,7 +7,7 @@ import { CounterApp } from './tareas/CounterApp';
 
 
 const App=()=>{
-    return <div className='min-h-[500px] flex flex-col'>
+    return <div className='min-h-[500px] flex flex-col m-5'>
         Movies App
         </div>
 }
