@@ -22,16 +22,16 @@ export const MoviesByGenre=({genre})=>{
 
     return (
         <>
-        <h5> {genre}</h5>
-        <div className="flex mb-4 mx-10">
-            {
-            movies.map( (movie) => (
-                <MovieItem 
-                key={movie.id}
-                {...movie}/>
-            ))
-            }
-        </div>
+            <h5> {genre}</h5>
+            <div className="flex mb-auto mx-10 mt-5">
+                {
+                movies.map( (movie) => (
+                    <MovieItem 
+                    key={movie.id}
+                    {...movie}/>
+                ))
+                }
+            </div>
         </>
     )
 }

@@ -1,6 +1,6 @@
 export const MovieItem = ({title, image, date, calification}) => {
   return (
-    <div className="w-1/6 h-12">
+    <div className="w-1/6">
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
             <img className="mx-auto w-40" src={image} alt={`Imagen de ${title}`}/>
             <div className="px-6 py-4">
