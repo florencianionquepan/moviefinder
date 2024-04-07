@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { AddGenre } from "./AddGenre";
 
 export const GenreApp = () => {
     const [genres, setGenres]=useState(['Terror','Comedy','Drama','Fiction']);
 
     const onAddGenre=(g)=>{
+        if(genres.includes(g)) return;
         setGenres([...genres,g]);
     }
 
@@ -20,6 +22,10 @@ export const GenreApp = () => {
         <li></li>
     </ol>
 
+    <AddGenre 
+    //setGenres={setGenres}
+    onNewGenre={(value)=>onAddGenre(value)}
+    />
 
     </>
     )
