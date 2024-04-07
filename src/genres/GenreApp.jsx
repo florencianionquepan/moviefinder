@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { AddGenre } from "./AddGenre";
 import { GenreGrid } from "./GenreGrid";
+import { MoviesByGenre } from "./MoviesByGenre";
 
 export const GenreApp = () => {
-    const [genres, setGenres]=useState(['Terror','Comedy','Drama','Fiction']);
+    const [genres, setGenres]=useState(['Terror']);
 
     const onAddGenre=(g)=>{
         if(genres.includes(g)) return;
@@ -15,7 +16,7 @@ export const GenreApp = () => {
     <h5>Genres:</h5>
 
         {genres.map( gen =>
-            <GenreGrid 
+            <MoviesByGenre
                 key={gen} 
                 genre={gen}/>
         )}
