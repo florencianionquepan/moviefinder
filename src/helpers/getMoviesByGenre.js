@@ -7,9 +7,9 @@ export const getMovies=async(genre)=>{
     const movies =data.map(movie=>({
         id:movie.id,
         title:movie.titulo,
-        fecha:movie.fechaCreacion,
-        calificacion:movie.calificacion,
-        imagen:movie.imagenURL
+        date:movie.fechaCreacion,
+        calification:movie.calificacion,
+        image:movie.imagenURL
     }))
     console.log(movies);
     return movies;
