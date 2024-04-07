@@ -17,7 +17,7 @@ const items=[
 export const MiFooter=()=>{
     return (
             <>
-            <div className='w-full mt-auto text-gray-200 py-y px-4 border-t border-gray-600'>
+            <footer className='w-full mt-auto text-gray-200 py-y px-4 border-t border-gray-600'>
                 <div className='max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-5 border-b-2
                 border-gray-600 py-8'>
                     {
@@ -54,6 +54,7 @@ export const MiFooter=()=>{
                     </p>
                     <div className='flex justify-between sm:w-[300px] text-2xl py-6'>
                         {
+                            //se recomienda no usar el index como key!!
                             items.map((x,index)=>{
                                 return <x.icon key={index} className='hover:text-white cursor-pointer'/>
                             })
@@ -61,7 +62,7 @@ export const MiFooter=()=>{
 
                     </div>
                 </div>
-            </div>
+            </footer>
             </>
     )
 }
