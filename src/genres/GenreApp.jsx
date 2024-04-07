@@ -15,16 +15,16 @@ export const GenreApp = () => {
     <>
     <h5>Genres:</h5>
 
+    <AddGenre 
+    //setGenres={setGenres}
+    onNewGenre={(value)=>onAddGenre(value)}
+    />
+
         {genres.map( gen =>
             <MoviesByGenre
                 key={gen} 
                 genre={gen}/>
         )}
-
-    <AddGenre 
-    //setGenres={setGenres}
-    onNewGenre={(value)=>onAddGenre(value)}
-    />
 
     </>
     )
