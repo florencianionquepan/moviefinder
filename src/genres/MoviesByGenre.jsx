@@ -1,28 +1,19 @@
-import { useEffect, useState } from 'react';
-import {getMovies} from '../helpers/getMoviesByGenre';
 import { MovieItem } from '../movies/MovieItem';
+import { useFetchMovies } from '../hooks/useFetchMovies';
 
 export const MoviesByGenre=({genre})=>{
 
     //de esta forma asi solo se dispara dos veces la funcion
     //getMovies(genre);
 
-    const [movies, setMovies]= useState([]);
-
-    const getImagesMovies=async()=>{
-        const newM = await getMovies(genre);
-        setMovies(newM);
-    }
-
-    //en modo estricto se dispara dos veces, 
-    //sino una sola (en produccion no se usa modo estricto)
-    useEffect( () => {
-        getImagesMovies();
-    }, [])
+    const {movies,isLoading}= useFetchMovies(genre);
 
     return (
         <>
             <h5> {genre}</h5>
+            {
+                isLoading && (<h4> Cargando... </h4>) 
+            }
             <div className="flex mb-auto mx-10 mt-5">
                 {
                 movies.map( (movie) => (
