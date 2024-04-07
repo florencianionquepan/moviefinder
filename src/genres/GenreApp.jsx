@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddGenre } from "./AddGenre";
+import { GenreGrid } from "./GenreGrid";
 
 export const GenreApp = () => {
     const [genres, setGenres]=useState(['Terror','Comedy','Drama','Fiction']);
@@ -13,14 +14,11 @@ export const GenreApp = () => {
     <>
     <h5>Genres:</h5>
 
-    <ol>
-        {genres.map(genre=>{
-            return <li key={genre}>
-                {genre}
-            </li>
-        })}
-        <li></li>
-    </ol>
+        {genres.map( gen =>
+            <GenreGrid 
+                key={gen} 
+                genre={gen}/>
+        )}
 
     <AddGenre 
     //setGenres={setGenres}
