@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { AddGenre } from "./AddGenre";
-import { GenreGrid } from "./GenreGrid";
 import { MoviesByGenre } from "./MoviesByGenre";
 
 export const GenreApp = () => {
     const [genres, setGenres]=useState(['Terror']);
 
     const onAddGenre=(g)=>{
-        if(genres.includes(g)) return;
-        setGenres([...genres,g]);
+        const formattedGenre = g.charAt(0).toUpperCase() + g.slice(1).toLowerCase();
+
+        if(genres.includes(formattedGenre)) return;
+        setGenres([formattedGenre,...genres]);
     }
 
     return (

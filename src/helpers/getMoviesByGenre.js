@@ -11,6 +11,6 @@ export const getMovies=async(genre)=>{
         calification:movie.calificacion,
         image:movie.imagenURL
     }))
-    console.log(movies);
+    //console.log(movies);
     return movies;
 }
