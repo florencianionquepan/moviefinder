@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## About the App
+This is an application that displays movies that users can rate, 
+along with their current ratings (please note that this functionality is not available yet). 
+Only movies corresponding to the inserted genre are displayed. 
+The app uses Tailwind CSS for styling.
+The API used to create this app can be found at [this repository](https://github.com/florencianionquepan/BootcampBesysoft) under the 'ejercitacion' folder.
+
 ## Available Scripts
 
 In the project directory, you can run:
