@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 export const SimpleForm = () => {
@@ -16,6 +16,20 @@ export const SimpleForm = () => {
         [name]: value
     });
   }
+
+  /* asi se llama solo cuando se renderiza la primera vez */
+  useEffect(()=>{
+    console.log('useEffect called!');
+  },[]);
+
+  /* asi se llama solo cuando cambia el form */
+  useEffect(()=>{
+    console.log('formState changed!');
+  },[formState]);
+
+  useEffect(()=>{
+    console.log('email changed!');
+  },[email]);
 
   return (
     <div className="w-full max-w-xs m-auto mt-20 min-h-[600px]">
