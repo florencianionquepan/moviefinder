@@ -76,7 +76,7 @@ export const SimpleForm = () => {
           </button>
         </div> */}
         {
-            (username=='flower2') && <Message/>
+            (username==='flower2') && <Message/>
         }
       </form>
     </div>
