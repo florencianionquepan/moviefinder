@@ -4,7 +4,7 @@ import { useForm } from "../../hooks/useForm";
 
 export const FormCustomHook = () => {
 
-  const {formState, onInputChange} = useForm({
+  const {formState, onInputChange, onResetForm} = useForm({
     username:'',
     email:'',
     password:''
@@ -79,14 +79,14 @@ export const FormCustomHook = () => {
             value={password}
             onChange={onInputChange}/>
         </div>
-        {/* <div className="flex items-center justify-between">
+        /* <div className="flex items-center justify-between">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 
             px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button">
-            Sign In
+            type="button" onClick={onResetForm}>
+            Reset
           </button>
-        </div> */}
+        </div> */
         {
             (username==='flower2') && <Message/>
         }
