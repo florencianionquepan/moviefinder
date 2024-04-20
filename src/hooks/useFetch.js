@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+
+const localCache={}
 
 export const useFetch = (url) => {
 
@@ -26,6 +28,17 @@ export const useFetch = (url) => {
 
 
     const getFetch =async() =>{
+
+      if( localCache[url]){
+        setState({
+          data:localCache[url],
+          isLoading:false,
+          hasError:false,
+          error:null
+        })
+        return;
+      }
+
       setLoadingState();
       const resp = await fetch(url);
 
@@ -53,6 +66,8 @@ export const useFetch = (url) => {
         })
 
         //Manejo del cache
+        localCache[url]= data;
+        //ver libreria tanStack query
     }
     
 
