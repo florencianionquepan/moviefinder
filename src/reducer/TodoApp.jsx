@@ -18,7 +18,6 @@ export const TodoApp = () => {
 
     useEffect(() => {
       localStorage.setItem('todos', JSON.stringify(todos));
-    
     }, [todos])
     
 
@@ -29,8 +28,15 @@ export const TodoApp = () => {
         }
     
         dispatchTodo (action);
-        //console.log({todo});
+        //console.log({todo})
     }
+
+    const handleDeleteTodo = (id) => {
+        dispatchTodo({
+            type:'[TOOO] Remove Todo',
+            payload:id
+        })
+    };
 
 
   return (
@@ -39,7 +45,7 @@ export const TodoApp = () => {
 
         <div className="grid grid-cols-3 gap-4">
             <div className='m-5'>
-                <ListTodo todos={todos}/>
+                <ListTodo todos={todos} onDeleteTodo={id => handleDeleteTodo(id)} />
             </div>
             
             <div>
