@@ -1,6 +1,6 @@
 import { TodoItem } from './TodoItem';
 
-export const ListTodo = ({todos=[], onDeleteTodo }) => {
+export const ListTodo = ({todos=[], onDeleteTodo, onToggleTodo }) => {
   return (
     <ul className='list-disc list-inside'>
         {
@@ -9,6 +9,7 @@ export const ListTodo = ({todos=[], onDeleteTodo }) => {
               key={todo.id}
               todo={todo}
               onDeleteTodo={ id=> onDeleteTodo(id) }
+              onToggleTodo={onToggleTodo}
             />
             ))              
         }               

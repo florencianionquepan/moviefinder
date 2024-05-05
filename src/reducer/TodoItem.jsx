@@ -1,8 +1,8 @@
-export const TodoItem = ( {todo, onDeleteTodo} ) => {
+export const TodoItem = ( {todo, onDeleteTodo, onToggleTodo} ) => {
   return (
     <>
-    <li className='p-2 border rounded flex justify-between'
-        key={todo.id}>
+    <li className={`p-2 border rounded flex justify-between ${(todo.done)?'line-through':''}`}
+        key={todo.id} onClick={() => onToggleTodo(todo.id)}>
         <span className='my-auto'>
           {todo.description}
         </span>

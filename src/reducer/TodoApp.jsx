@@ -38,6 +38,13 @@ export const TodoApp = () => {
         })
     };
 
+    const handleToggleTodo =(id) =>{
+        dispatchTodo({
+            type:'[TODO] Toggle Todo',
+            payload:id
+        })
+    }
+
 
   return (
     <div className='min-h-[500px] m-5'>
@@ -45,7 +52,11 @@ export const TodoApp = () => {
 
         <div className="grid grid-cols-3 gap-4">
             <div className='m-5'>
-                <ListTodo todos={todos} onDeleteTodo={id => handleDeleteTodo(id)} />
+                <ListTodo 
+                todos={todos} 
+                onDeleteTodo={id => handleDeleteTodo(id)} 
+                onToggleTodo ={handleToggleTodo}
+                />
             </div>
             
             <div>
