@@ -4,13 +4,21 @@ import MiHeader from './shared/MiHeader'
 import { MiFooter } from './shared/MiFooter'
 import './styles.css';
 import {MovieApp} from './MovieApp';
+import { BrowserRouter } from 'react-router-dom';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <MiHeader/>
-        <MovieApp/>
-        <MiFooter/>
-    </React.StrictMode>
+    <BrowserRouter>
+        <React.StrictMode>
+            <MiHeader/>
+            {/* <FormCustomHook/> */}
+            {/* <MultipleCustomHook/> */}
+            {/* <Layout/> */}
+            {/* <Padre/> */}
+            {/* <TodoApp/> */}
+            <MovieApp/>
+            <MiFooter/>
+        </React.StrictMode>
+    </BrowserRouter>
 
 )
