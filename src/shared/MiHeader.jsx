@@ -31,10 +31,10 @@ export default function MiHeader() {
 
         {/* lie items */}
         <ul className={`md:flex md:items-center 
-        md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] 
+        md:pb-0 pb-12 md:static md:z-auto
         left-0 w-full md:w-auto md:pl-0 pl-9
         transition-all duration-500 ease-in 
-        ${isOpen?'top-12':'top-[-490px]'} z-50 bg-[#21232A]`}>
+        ${isOpen?'top-20':'hidden'} z-50 bg-[#21232A]`}>
           {
             Links.map(li=>
             <li className='font-semibold my-7 md:my-0 md:ml-8' key={li.id}>
