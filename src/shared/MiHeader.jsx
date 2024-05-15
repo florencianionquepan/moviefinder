@@ -1,15 +1,9 @@
-import React, {useState} from 'react'
-import { FilmIcon, Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
-import { NavLink } from 'react-router-dom';
+import React, {useState} from 'react';
+import { FilmIcon, Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { PublicMenu } from './PublicMenu';
 
 
 export default function MiHeader() {
-  let Links=[
-    {id:1, name:'Home', link:'/'},
-    {id:2, name:'Movies', link:'/movies'},
-    {id:3, name:'Genre', link:'/genres'}
-  ]
 
   let [isOpen, setIsOpen] = useState(false);
 

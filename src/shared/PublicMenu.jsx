@@ -4,8 +4,8 @@ export const PublicMenu = ({isOpen}) => {
 
   let Links=[
     {id:1, name:'Home', link:'/'},
-    {id:2, name:'Movies', link:'/movies'},
-    {id:3, name:'Genre', link:'/genres'}
+    {id:2, name:'About', link:'/about'},
+    {id:3, name:'Movies', link:'/movies'}
   ]
 
   return (
@@ -28,7 +28,7 @@ export const PublicMenu = ({isOpen}) => {
 
             </li>)
           }
-          <NavLink to="login" className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 md:ml-8 d:static px-5 py-1'>
+          <NavLink to="login" replace className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 md:ml-8 d:static px-5 py-1'>
             Login
           </NavLink>
         </ul>
