@@ -7,7 +7,7 @@ export const MovieApp = () => {
     return (
         <>
         <UserProvider>
-                <div className='min-h-[800px] flex flex-col m-5'>
+                <div className='min-h-[800px] flex flex-col mx-10'>
                         {/* <GenreApp/> */}
                         <AppRouter/>
                 </div>

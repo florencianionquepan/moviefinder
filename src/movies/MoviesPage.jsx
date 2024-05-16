@@ -1,9 +1,11 @@
+import { useMemo } from 'react';
 import { getMoviesBy } from './helpers/getMoviesBy'
 import {MovieItem} from './MovieItem';
 
 
 export const MoviesPage = () => {
-    const movies = getMoviesBy();
+
+    const movies = useMemo( ()=> getMoviesBy(), []);
     return (
       <>
       <h1>Todas las pelis</h1>

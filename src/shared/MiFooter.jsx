@@ -17,7 +17,7 @@ const items=[
 export const MiFooter=()=>{
     return (
             <>
-            <footer className='w-full mt-auto text-gray-200 py-y px-4 border-t border-gray-600'>
+            <footer className='w-full text-gray-200 py-y px-4 border-t border-gray-600 mt-20'>
                 <div className='max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-5 border-b-2
                 border-gray-600 py-8'>
                     {

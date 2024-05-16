@@ -1,11 +1,12 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { getMovieById } from './helpers/getMovieById';
+import { useMemo } from 'react';
 
 export const MoviePage = () => {
 
   const {id} = useParams();
   const navigate = useNavigate();
-  const movie = getMovieById(id);
+  const movie = useMemo( () => getMovieById(id), [id]) ;
 
   const renderCalificacion = (calificacion) => {
     const circulos = [];
