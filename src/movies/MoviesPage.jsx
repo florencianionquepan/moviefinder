@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
-import { getMoviesBy } from './helpers/getMoviesBy'
+import { getMoviesBy } from './helpers/index';
 import {MovieItem} from './MovieItem';
+import {TitleCustom} from './../shared/TitleCustom';
 
 
 export const MoviesPage = () => {
@@ -8,7 +9,7 @@ export const MoviesPage = () => {
     const movies = useMemo( ()=> getMoviesBy(), []);
     return (
       <>
-      <h1>Todas las pelis</h1>
+      <TitleCustom title={"All the movies"}/>
   
       <div className='grid grid-cols-4 mb-auto mx-10 mt-5'>
         {

@@ -5,7 +5,8 @@ export const PublicMenu = ({isOpen}) => {
   let Links=[
     {id:1, name:'Home', link:'/'},
     {id:2, name:'About', link:'/about'},
-    {id:3, name:'Movies', link:'/movies'}
+    {id:3, name:'Movies', link:'/movies'},
+    {id:4, name:'Search', link:'/search'}
   ]
 
   return (

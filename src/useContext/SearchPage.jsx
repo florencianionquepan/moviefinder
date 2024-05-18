@@ -5,6 +5,7 @@ import {getMoviesByName} from '../movies/helpers/index';
 import { MovieItem } from '../movies/MovieItem'
 import { WarningAlert } from '../shared/WarningAlert';
 import { InfoAlert } from '../shared/InfoAlert';
+import { TitleCustom } from '../shared/TitleCustom';
 
 export const SearchPage = () => {
 
@@ -31,8 +32,7 @@ export const SearchPage = () => {
   }
   return (
     <>
-      <h1 className="text-3xl font-bold mx-5 mt-5 mb-2">Search Page</h1>
-      <hr></hr>
+      <TitleCustom title={"SearchPage"} />
       <div className='grid grid-cols-3 gap-4 mt-10'>
         <div>
           <form className="flex items-center max-w-sm ms-5" onSubmit={ onSearchSubmit }>   

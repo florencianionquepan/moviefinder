@@ -1,7 +1,10 @@
 import React from 'react'
+import { TitleCustom } from '../shared/TitleCustom'
 
 export const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <>
+    <TitleCustom title={"About Page"} />
+    </>
   )
 }

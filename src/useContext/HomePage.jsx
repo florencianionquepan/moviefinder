@@ -1,7 +1,9 @@
-import React from 'react'
+import { TitleCustom } from '../shared/TitleCustom'
 
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+    <TitleCustom title={"Home Page"} />
+    </>
   )
 }
