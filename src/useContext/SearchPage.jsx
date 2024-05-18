@@ -3,6 +3,8 @@ import queryString from 'query-string';
 import { useForm } from '../hooks/useForm'
 import {getMoviesByName} from '../movies/helpers/index';
 import { MovieItem } from '../movies/MovieItem'
+import { WarningAlert } from '../shared/WarningAlert';
+import { InfoAlert } from '../shared/InfoAlert';
 
 export const SearchPage = () => {
 
@@ -13,6 +15,9 @@ export const SearchPage = () => {
 
   const movies = getMoviesByName(q);
 
+  const showSearch = (q.length===0);
+  const showNoneMovie = (q.length>0) && movies.length===0;
+
   const { searchText, onInputChange } = useForm({
     searchText: q
 
@@ -20,7 +25,7 @@ export const SearchPage = () => {
 
   const onSearchSubmit = (event )=>{
     event.preventDefault();
-    if (searchText.trim().length <=2 ) return;
+    //if (searchText.trim().length <=2 ) return;
 
     navigate(`?q=${searchText.toLowerCase().trim()}`);
   }
@@ -64,27 +69,12 @@ export const SearchPage = () => {
         </div>
         <div>
           <h1 className='text-2xl'> Results </h1>
-          <div className="flex bg-yellow-100 rounded-lg p-4 px-10 mb-4 text-sm text-yellow-700 max-w-max" role="alert">
-            <svg className="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20" 
-                  xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd">
-                      </path>
-            </svg>
-            <div>
-              <span className="font-medium">Warning alert!</span> Search a movie to see someones
-            </div>
-          </div>
+          
+          <WarningAlert text={"Search a movie to see someones"} 
+                        style={{display: showSearch ? '':'none'}}/>
 
-          <div className="flex bg-blue-100 rounded-lg p-4 px-10 mb-4 text-sm text-blue-700 max-w-max" role="alert">
-            <svg className="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20" 
-                  xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd">
-                      </path>
-            </svg>
-            <div>
-              <span className="font-medium">Info alert!</span> No movie with <b> {q} </b>
-            </div>
-          </div>
+          <InfoAlert text={"No movie with"} q={q} 
+                    style={{display: showNoneMovie ? '':'none'}}/> 
 
           {
             movies.map( movie => (
