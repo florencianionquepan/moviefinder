@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export const MovieItem = ({id,title, image, date, calification}) => {
+export const MovieItem = ({id, title, image, date, calification}) => {
   return (
     <div className="w-auto mx-auto">
         <div className="max-w-sm rounded bg-gray-800 m-2 p-5">
