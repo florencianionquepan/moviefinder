@@ -3,11 +3,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## About the App
-This is an application that displays movies that users can rate, 
-along with their current ratings (please note that this functionality is not available yet). 
-Only movies corresponding to the inserted genre are displayed. 
-The app uses Tailwind CSS for styling.
-The API used to create this app can be found at [this repository](https://github.com/florencianionquepan/BootcampBesysoft) under the 'ejercitacion' folder.
+This application showcases all the movies loaded on the web, including their release dates, ratings, images, and characters. It also features a search function to find movies by their names. Additionally, it simulates a login with public and private routes (this is frontend only, with no backend).
+
+🔍 **Search Functionality**
+* **By Name:** Use the search bar to find movies by their titles.
+* **By Genre:** There is a route "/genres" to search by genre, but it is not included in the menu because it requires the backend to be running locally.
+
+🛠 **Technical Details**
+* **Styling:** The app uses Tailwind CSS for styling.
+* **Backend:** Initially, the movies were loaded using a backend found in this [repository](https://github.com/florencianionquepan/BootcampBesysoft) under the 'ejercitacion' folder. Later, the data was copied to focus on learning React.
+* **Simulated Login:** The app features simulated login functionality, focusing on frontend implementation without a backend.
+
+📁 **Additional Information**
+* The repository also contains folders that are not part of the main project but include exercises given throughout the course to learn various React hooks.
+
 
 ## Available Scripts
 
