@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { AuthContext } from "../auth"
 import { useContext } from "react";
 
@@ -10,9 +10,19 @@ export const PublicMenu = ({isOpen}) => {
     {id:3, name:'Movies', link:'/movies'},
     {id:4, name:'Search', link:'/search'}
   ]
+
+  const navigate = useNavigate();
   
-  const {user} = useContext(AuthContext);
+  const {user, logout} = useContext(AuthContext);
   console.log(user);
+
+  const onLogout = () =>{
+    logout();
+    navigate('/',{
+      replace:true
+    }
+    )
+  }
 
   return (
     <>
@@ -39,6 +49,12 @@ export const PublicMenu = ({isOpen}) => {
           <NavLink to="login" replace className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1'>
             Login
           </NavLink>
+
+          <button 
+            className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1 ms-2'
+            onClick={()=>onLogout()}>
+            Logout
+          </button>
         </ul>
     </>
   )

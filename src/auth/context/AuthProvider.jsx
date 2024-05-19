@@ -2,6 +2,7 @@ import { useReducer, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { authReducer } from "./authReducer";
 import { types } from "../types/types";
+import { type } from "@testing-library/user-event/dist/type";
 
 /* const initialState ={
   logged:false
@@ -39,10 +40,19 @@ export const AuthProvider = ({children}) => {
     dispatch(action);
   }
 
+  const logout = () =>{
+
+    localStorage.removeItem('user');
+    const action={ type: types.logout }
+    dispatch(action);
+  }
+
   return (
     <AuthContext.Provider value={{ 
       ...state,
-      login: login
+      //metodos:
+      login: login,
+      logout:logout
      }}>
         { children }
     </AuthContext.Provider>
