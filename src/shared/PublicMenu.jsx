@@ -45,13 +45,14 @@ export const PublicMenu = ({isOpen}) => {
             </li>)
           }
 
-          <p className="mx-10"> {user?.name} </p>
-          <NavLink to="login" replace className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1'>
+          <p className="mx-10 my-7 md:my-0 md:ml-8"> {user?.name} </p>
+          <NavLink to="login" replace 
+          className={`btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1 ${user? 'hidden':''}`}>
             Login
           </NavLink>
 
           <button 
-            className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1 ms-2'
+            className={`btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1 ${user? '':'hidden'}`}
             onClick={()=>onLogout()}>
             Logout
           </button>
