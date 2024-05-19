@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { LoginPage } from './useContext/LoginPage'
-import { MoviesRoutes } from './useContext/routes/MoviesRoutes'
+import { LoginPage } from '../pages/LoginPage'
+import { MoviesRoutes } from './MoviesRoutes'
 
 export const AppRouter = () => {
   return (

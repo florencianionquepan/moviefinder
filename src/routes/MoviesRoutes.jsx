@@ -1,12 +1,12 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { HomePage } from '../HomePage'
-import { AboutPage } from '../AboutPage'
-import { MoviePage } from '../../movies/MoviePage'
-import { SearchPage } from '../SearchPage'
-import MiHeader from '../../shared/MiHeader'
-import { MoviesPage } from '../../movies/MoviesPage'
-import {GenreApp} from '../../genres/GenreApp'
+import { HomePage } from '../pages/HomePage'
+import { AboutPage } from '../pages/AboutPage'
+import { MoviePage } from '../movies/MoviePage'
+import { SearchPage } from '../pages/SearchPage'
+import MiHeader from '../shared/MiHeader'
+import { MoviesPage } from '../movies/MoviesPage'
+import {GenreApp} from '../genres/GenreApp'
 
 export const MoviesRoutes = () => {
   return (
