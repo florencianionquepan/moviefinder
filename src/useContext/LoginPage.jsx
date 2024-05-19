@@ -1,21 +1,29 @@
-import React, { useContext } from 'react'
-import { UserContext } from './context/userContext'
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../auth";
 
 export const LoginPage = () => {
 
-  const {user, setUser} = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const {login} = useContext(AuthContext);
+
+  const onLogin = () =>{
+    login('Flower');
+
+    navigate('/',{
+      replace:true
+    });
+  }
 
   return (
     <>
-      Login Page
-
       <pre>
-        {JSON.stringify(user,null,3)}
+        
       </pre>
 
-      <button className='btn rounded bg-violet-600 mx-auto p-3'
-      onClick={()=>setUser({id:1, name:'flower', email:'flo@gmail.com'})} >
-        Establecer usuario
+      <button className='btn rounded bg-violet-600 mx-auto p-3' onClick={onLogin}>
+        Login
       </button>
       
     </>

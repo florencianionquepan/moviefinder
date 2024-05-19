@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom"
+import { AuthContext } from "../auth"
+import { useContext } from "react";
 
 export const PublicMenu = ({isOpen}) => {
 
@@ -8,6 +10,9 @@ export const PublicMenu = ({isOpen}) => {
     {id:3, name:'Movies', link:'/movies'},
     {id:4, name:'Search', link:'/search'}
   ]
+  
+  const {user} = useContext(AuthContext);
+  console.log(user);
 
   return (
     <>
@@ -29,7 +34,9 @@ export const PublicMenu = ({isOpen}) => {
 
             </li>)
           }
-          <NavLink to="login" replace className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 md:ml-8 d:static px-5 py-1'>
+
+          <p className="mx-10"> {user?.name} </p>
+          <NavLink to="login" replace className='btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1'>
             Login
           </NavLink>
         </ul>

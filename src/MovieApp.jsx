@@ -1,18 +1,17 @@
-import MiHeader from "./shared/MiHeader";
 import {MiFooter} from "./shared/MiFooter";
-import { UserProvider } from "./useContext/context/UserProvider";
 import { AppRouter } from "./AppRouter";
+import { AuthProvider } from "./auth";
 
 export const MovieApp = () => {
     return (
         <>
-        <UserProvider>
+        <AuthProvider>
                 <div className='min-h-[800px] flex flex-col mx-10'>
                         {/* <GenreApp/> */}
                         <AppRouter/>
                 </div>
             <MiFooter/>
-        </UserProvider> 
+        </AuthProvider> 
         </>
     )
 }
