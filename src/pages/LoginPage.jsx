@@ -9,20 +9,20 @@ export const LoginPage = () => {
   const {login} = useContext(AuthContext);
 
   const onLogin = () =>{
+
+    const lastPath= localStorage.getItem('lastPath') || '/';
+
     login('Flower');
 
-    navigate('/',{
+    navigate(lastPath,{
       replace:true
     });
   }
 
   return (
     <>
-      <pre>
-        
-      </pre>
 
-      <button className='btn rounded bg-violet-600 mx-auto p-3' onClick={onLogin}>
+      <button className='btn rounded bg-violet-600 m-auto p-3' onClick={onLogin}>
         Login
       </button>
       

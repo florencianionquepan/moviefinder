@@ -14,11 +14,11 @@ export const PublicMenu = ({isOpen}) => {
   const navigate = useNavigate();
   
   const {user, logout} = useContext(AuthContext);
-  console.log(user);
+  //console.log(user);
 
   const onLogout = () =>{
     logout();
-    navigate('/',{
+    navigate('/login',{
       replace:true
     }
     )
@@ -46,6 +46,7 @@ export const PublicMenu = ({isOpen}) => {
           }
 
           <p className="mx-10 my-7 md:my-0 md:ml-8"> {user?.name} </p>
+          {/* esta parte la deje asi pq inicialmente queria tener algunas rutas publicas, luego ya deje todas como privadas  */}
           <NavLink to="login" replace 
           className={`btn rounded bg-violet-600 font-semibold my-7 md:my-0 d:static px-5 py-1 ${user? 'hidden':''}`}>
             Login
